@@ -1,8 +1,11 @@
 package com.grupo_10.grupo_10.controllers;
 
+import com.grupo_10.grupo_10.entities.Empresa;
 import com.grupo_10.grupo_10.services.IServicioEmpresa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("empresas")
@@ -11,7 +14,6 @@ public class EmpresaControlador {
     IServicioEmpresa servicioEmpresa;
 
     //GET
-
     @GetMapping(method = RequestMethod.GET, produces = "aplication/json")
     @ResponseBody
     public List<Empresa> findAll(){

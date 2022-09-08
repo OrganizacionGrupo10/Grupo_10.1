@@ -12,7 +12,7 @@ import java.util.ArrayList;
 @Entity
 //Anotcion que permite declarar una tabla a nivel de base de datos
 @Table(name="Empresa")
-public class empresa {
+public class Empresa {
     //atributos
     //Anotacion que me permite señalar que el atributo es la llave primaria
     @Id
@@ -27,7 +27,7 @@ public class empresa {
     //CONSTRUCTORES
     public Empresa(){}
 
-    public empresa(long id, ArrayList<Empleado> usuarios, String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa) {
+    public Empresa(long id, ArrayList<Empleado> usuarios, String nombreEmpresa, String direccionEmpresa, String telefonoEmpresa, String nitEmpresa) {
         this.id = id;
         this.usuarios = usuarios;
         this.nombreEmpresa = nombreEmpresa;

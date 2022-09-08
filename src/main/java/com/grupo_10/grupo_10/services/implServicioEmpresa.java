@@ -1,5 +1,6 @@
 package com.grupo_10.grupo_10.services;
 
+import com.grupo_10.grupo_10.entities.Empresa;
 import com.grupo_10.grupo_10.repositories.IRepositoryEmpresa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
