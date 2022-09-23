@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="ISO-8859-1">
+  <title>SISTEMAS DE GESTION DE INGRESOS Y EGRESOS - ACTUALIZAR MOVIMIENTO</title>
+
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>MOVIMIENTOS</h1>
+  <hr>
+  <h2>Actualizar Movimiento</h2>
+
+  <form action="#" th:action="@{/guardarmovimiento}" th:object="${movimiento}" method="POST">
+
+    <input type="text" th:field="*{id_movimiento}" placeholder="#" class="form-control mb-4 col-4" readonly>
+    <input type="text" th:field="*{concepto}" placeholder="Concepto" class="form-control mb-4 col-4">
+    <input type="number" th:field="*{monto}" placeholder="Monto" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{empleado}" placeholder="# de Empleado" class="form-control mb-4 col-4">
+    <input type="date" th:field="*{fecha}" placeholder="Fecha" class="form-control mb-4 col-4" readonly>
+    <h6>Si necesita cambiar la fecha debe eliminar el movimiento y crearlo de nuevo </h6>
+    <button type="submit" class="btn btn-info col-2"> Actualizar Movimiento</button>
+  </form>
+  <hr>
+  <a th:href = "@{/}">Volver a la lista de movimientos</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
