@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>SISTEMAS DE GESTIÓN DE INGRESOS Y EGRESOS - HOME</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2" align="center">
+    <h1 align="center" class="container mt-3">SISTEMAS DE GESTION DE INGRESOS Y EGRESOS</h1>
+    <img src="../img/logo.png" class="mx-auto d-block">
+    </br>
+    </br>
+    <div sec:authorize="!isAuthenticated()">
+        <a th:href="@{/oauth2/authorization/auth0}" class="btn btn-primary btn-lg">Iniciar Sesión</a>
+    </div>
+    <div sec:authorize="isAuthenticated()">
+        <h2 th:text =" 'Bienvenido ' + ${usuario.getEmail()}"></h2>
+        </br>
+        <div th:switch="${usuario.rol}">
+            <div th:case="Admin">
+                <div class="btn-group btn-group-lg">
+                    <a href="/empresas" type="button" class="btn btn-secondary">Empresas</a>
+                    <a href="/empleados" type="button" class="btn btn-warning">Empleados</a>
+                    <a href="/movimientos" type="button" class="btn btn-info">Movimientos</a>
+                </div>
+            </div>
+            <div th:case="Operativo">
+                <div class="btn-group btn-group-lg">
+                    <a href="/movimientos" type="button" class="btn btn-success">Movimientos</a>
+                </div>
+            </div>
+            <div th:case="*">
+                <div class="alert alert-warning">
+                    <strong>Atención:</strong> Su correo no se encuentra registrado como usuario, solicite al administrador que lo registre y actualice su rol de usuario.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>SISTEMAS DE GESTIÓN DE INGRESOS Y EGRESOS - EMPRESAS</title>
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+<div>
+  <img src="../img/logo.png" class="float-right mr-5">
+</div>
+<body>
+<div class="container" align="center">
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  </br>
+  <h2>Actualizar Empleado</h2>
+  </br>
+  <form action="#" th:action="@{/guardarempleado}" th:object="${empleado}" method="POST">
+
+    <input type="hidden" th:field="*{id_empleado}" placeholder="#" class="form-control mb-2 col-4" readonly>
+    <input type="text" th:field="*{nombre}" placeholder="Nombre" class="form-control mb-2 col-4"required>
+    <input type="text" th:field="*{email}" placeholder="Correo" class="form-control mb-2 col-4" required>
+    <input type="number" th:field="*{identificacion}" placeholder="Identificacion - solo números" class="form-control mb-2 col-4"required>
+    <input type="text" th:field="*{telefono}" placeholder="Telefono" class="form-control mb-2 col-4"required>
+    <input type="number" th:field="*{empresa}" placeholder="Id de Empresa - solo números" class="form-control mb-2 col-4"required>
+    <input type="text" th:field="*{rol_empleado}" placeholder="Rol Empleado" class="form-control mb-2 col-4"required>
+    <div class="btn-group btn-group center">
+      <button type="submit" class="btn btn-success">Actualizar</button>
+      <a th:href = "@{/empleados}" class="btn btn-warning">Volver</a>
+    </div>
+  </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
